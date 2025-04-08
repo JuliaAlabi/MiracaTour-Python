@@ -20,9 +20,9 @@ def destinos():
 @app.route("/passeios")
 def passeios():
     passeios = {
-        "Cristo Redentor": "Cartão postal do Rio, com vista panorâmica.",
-        "Pelourinho": "Centro histórico vibrante de Salvador.",
-        "Cataratas": "Cachoeiras imponentes em Foz do Iguaçu."
+        "Templo Budista Bunkyo": "Templo japonês em Registro - SP",
+        "Salto de Biguá": "Cachoeira em Miracatu - SP",
+        "Beira Mar": "Centro histórico em Cananeia - SP"
     }
     return render_template("passeios.html", passeios=passeios)
 

@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="text-center">
-        <h1>Bem-vindo ao MiracaTour</h1>
-        <img src="{{ url_for('static', filename='img/brasil.jpg') }}" class="img-fluid rounded" alt="Imagem do Brasil">
-        <p class="mt-3">Descubra os melhores destinos e passeios turísticos do Brasil!</p>
+    <div class="hero-section text-center py-5 mb-5 rounded" style="background: linear-gradient(135deg, #0097b2, #6dc448);">
+        <h1 class="display-4 text-white">Bem-vindo ao MiracaTour</h1>
+        <p class="lead text-white">Descubra os melhores destinos e passeios turísticos do Brasil!</p>
+        <a href="/destinos" class="btn btn-light btn-lg mt-3">Explorar Destinos</a>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='img/cachoeiraMiracatu.jpg') }}" class="img-fluid rounded" alt="Cachoeira 1">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='img/beiraMar.jpg') }}" class="img-fluid rounded" alt="Cachoeira 2">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='img/bunkyo.jpg') }}" class="img-fluid rounded" alt="Cachoeira 3">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h3><i class="fas fa-map-marker-alt text-primary"></i> Destinos</h3>
+                    <p>Conheça nossos destinos exclusivos em todo o Brasil.</p>
+                    <a href="/destinos" class="btn btn-outline-primary">Ver Destinos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h3><i class="fas fa-route text-success"></i> Passeios</h3>
+                    <p>Experiências únicas com nossos passeios guiados.</p>
+                    <a href="/passeios" class="btn btn-outline-success">Ver Passeios</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h3><i class="fas fa-user-tie text-info"></i> Guias</h3>
+                    <p>Nossa equipe de guias especializados.</p>
+                    <a href="/guias" class="btn btn-outline-info">Conheça os Guias</a>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
