@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Passeios Recomendados</h2>
+    <div class="list-group">
+        {% for nome, desc in passeios.items() %}
+        <div class="list-group-item">
+            <strong>{{ nome }}</strong>: {{ desc }}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Destinos Turísticos</h2>
+    <ul class="list-group">
+        {% for destino in destinos %}
+        <li class="list-group-item">{{ destino }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

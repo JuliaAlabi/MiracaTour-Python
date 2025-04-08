@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Guias Turísticos</h2>
+    <ul class="list-group mb-4">
+        {% for nome, email in guias.items() %}
+        <li class="list-group-item">{{ nome }} - <a href="mailto:{{ email }}">{{ email }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h4>Adicionar Novo Guia</h4>
+    <form method="post" class="row g-3">
+        <div class="col-md-6">
+            <input type="text" name="nome" class="form-control" placeholder="Nome do guia" required>
+        </div>
+        <div class="col-md-6">
+            <input type="email" name="email" class="form-control" placeholder="Email do guia" required>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+    </form>
+{% endblock %}
