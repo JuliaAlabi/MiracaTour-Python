@@ -1,1 +1,1 @@
-console.log("Turismo BR - JavaScript carregado com sucesso!");
+console.log("MiracaTour - JavaScript carregado com sucesso!");
