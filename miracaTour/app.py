@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 destinos = {
     "Miracatu":{
-        "desc" : "Terra de Gente Boa $2",
+        "desc" : "Terra de Gente Boa - $2",
         "img" : "https://turismodenatureza.com.br/wp-content/uploads/2024/05/o-que-fazer-em-miracatu-1200x630.jpg"
     },
     "Cananéia":{
