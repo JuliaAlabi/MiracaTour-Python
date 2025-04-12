@@ -1,31 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2><i class="fas fa-map-marked-alt me-2"></i>Destinos Turísticos</h2>
-    </div>
+    <h2><i class="fas fa-map me-3 mb-3"></i>Destinos Recomendados</h2>
     <div class="row">
-        {% for nome, desc in destinos.items() %}
-        <div class="col-md-6 mb-4">
-            <div class="destino-item text-center h-100">
-                <h4>{{ nome }}</h4>
-                <p class="text-muted">{{ desc }}</p>
-                <button class="btn btn-sm btn-outline-primary">Saiba mais</button>
+        {% for nome, descricao in destinos.items() %}
+        <div class="col-md-4 mb-4">
+            <div class="destino-item p-3 border rounded">
+                <h4 class="mb-3">{{ nome }}</h4>
+                <p class="mb-0">{{ descricao.desc }}</p>
+                <img src="{{ descricao.img }}" alt="{{ nome }}" class="img-fluid rounded-3 mb-3 w-100" style="height: 200px; object-fit: cover;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success">Recomendado</span>
+                    <button class="btn btn-sm btn-primary">Reservar</button>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <div class="card border-0 shadow-sm mt-4">
+    <div class="card border-0 shadow-sm">
         <div class="card-body">
             <h4 class="card-title"><i class="fas fa-plus-circle me-2"></i>Adicionar Novo Destino</h4>
             <form method="post" class="row g-3 mt-2">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="nome" class="form-label">Destino</label>
-                    <input type="text" name="nome" class="form-control" placeholder="Nome do Local" required>
+                    <input type="text" name="nome" class="form-control" placeholder="Nome do Destino" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="desc" class="form-label">Descrição</label>
-                    <input type="text" name="desc" class="form-control" placeholder="Descrição do destino" required>
+                    <input type="text" name="desc" class="form-control" placeholder="Descrição do Destino" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="img" class="form-label">Link da Imagem</label>
+                    <input type="url" name="img" class="form-control" placeholder="URL da imagem" required>
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">Adicionar Destino</button>

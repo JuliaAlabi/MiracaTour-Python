@@ -3,10 +3,22 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 destinos = {
-    "Miracatu": "Terra de Gente Boa - R$2",
-    "Cananéia": "Primeiro Povoado do Brasil - R$45",
-    "Registro": "Marco da Colonização Japonesa em São Paulo - R$15",
-    "Iguape": "Cidade Histórica no Vale do Ribeira - R$45"
+    "Miracatu":{
+        "desc" : "Terra de Gente Boa $2",
+        "img" : "https://turismodenatureza.com.br/wp-content/uploads/2024/05/o-que-fazer-em-miracatu-1200x630.jpg"
+    },
+    "Cananéia":{
+        "desc" : "Primeiro Povoado do Brasil - R$45",
+        "img" : "https://www.turismopaulista.tur.br/imagens/cidades/21_banner3.jpg"
+    },
+    "Registro":{
+        "desc" : "Marco da Colonização Japonesa em São Paulo - R$15",
+        "img" : "https://registro.sp.gov.br/turismo/wp-content/uploads/2022/06/Guaracui-monumento-de-Tomie-Ohtake-Acervo-Prefeitura-de-Registro-330x220.jpg"
+    },
+    "Iguape":{
+        "desc" : "Cidade Histórica do Vale do Ribeira - R$45",
+        "img" : "https://www.viagensecaminhos.com/wp-content/uploads/2024/03/iguape-sp.jpg"
+    }
 }
 
 passeios = {
@@ -49,8 +61,12 @@ def destinos_route():
     if request.method == "POST":
         nome = request.form.get("nome")
         desc = request.form.get("desc")
-        if nome and desc:
-            destinos[nome] = desc
+        img = request.form.get("img")
+        if nome and desc and img:
+            destinos[nome] = {
+                "desc": desc,
+                "img": img
+            }
     return render_template("destinos.html", destinos=destinos)
 
 
@@ -62,7 +78,7 @@ def passeios_route():
         img = request.form.get("img")
         if nome and desc and img:
             passeios[nome] = {
-                "descricao": desc,
+                "desc": desc,
                 "img": img
             }
     return render_template("passeios.html", passeios=passeios)
