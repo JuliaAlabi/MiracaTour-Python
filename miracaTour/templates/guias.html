@@ -3,12 +3,12 @@
     <h2><i class="fas fa-user-tie me-3 mb-3"></i>Guias Turísticos</h2>
     
     <div class="row mb-4">
-        {% for nome, email in guias.items() %}
+        {% for guia in guias %}
         <div class="col-md-6 mb-3">
             <div class="card h-100 border-0 shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">{{ nome }}</h5>
-                    <p class="card-text"><i class="fas fa-envelope me-2"></i> <a href="mailto:{{ email }}">{{ email }}</a></p>
+                    <h5 class="card-title">{{ guia.nome }}</h5>
+                    <p class="card-text"><i class="fas fa-envelope me-2"></i> <a href="mailto:{{ email }}">{{ guia.email }}</a></p>
                     <button class="btn btn-sm btn-outline-primary">Contatar</button>
                 </div>
             </div>

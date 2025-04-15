@@ -44,11 +44,11 @@ passeios = {
     }
 }
 
-guias = {
-    "Carlos Lima": "carlos.turismo@gmail.com",
-    "Ana Rios": "ana.rios@viagens.com",
-    "Pedro Tour": "pedro@turismobr.com"
-}
+guias = [
+    {"nome": "Carlos Lima", "email": "carlos.turismo@gmail.com"},
+    {"nome": "Ana Rios", "email": "ana.rios@viagens.com"},
+    {"nome": "Pedro Tour", "email": "pedro@turismobr.com"}
+]
 
 
 @app.route("/")
@@ -90,7 +90,7 @@ def guias_route():
         nome = request.form.get("nome")
         email = request.form.get("email")
         if nome and email:
-            guias[nome] = email
+            guias.append({"nome": nome, "email": email})
     return render_template("guias.html", guias=guias)
 
 
